@@ -2,13 +2,14 @@
 include("simple_html_dom.php");
 $url = "https://helpdesk.bitrix24.com/widget2/";
 
-if(!empty($_GET['url'])) $url = "https://helpdesk.bitrix24.com" . $_GET['url'];
+if(!empty($_GET['url'])) $url = "https://helpdesk.bitrix24.com" . urldecode($_GET['url']);
 $arrContextOptions=array(
     "ssl"=>array(
         "verify_peer"=>false,
         "verify_peer_name"=>false,
     ),
 ); 
+$url = str_replace("thurlyos.com", "bitrix24.com", $url);
 $content = file_get_contents($url, false, stream_context_create($arrContextOptions));
 $content = str_replace("/bitrix/tools/conversion/ajax_counter.php", "https://helpdesk.bitrix24.com/bitrix/tools/conversion/ajax_counter.php", $content);
 $content = str_replace("Bitrix24", "ThurlyOS", $content);
