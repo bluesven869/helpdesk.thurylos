@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include("simple_html_dom.php");
 $url = "https://helpdesk.bitrix24.com/widget2/?url=https%3A%2F%2Fbitrix24.com%3A80%2Fcompany%2Fpersonal%2Fuser%2Ftasks%2Findex.php&is_admin=1&user_id=1&tariff=&is_cloud=0&support_bot=0&action=open?";
 
