@@ -2,7 +2,18 @@
 include("simple_html_dom.php");
 $url = "https://helpdesk.bitrix24.com/widget2/";
 
-if(!empty($_GET['url'])) $url = "https://helpdesk.bitrix24.com" . urldecode($_GET['url']);
+if(!empty($_GET['url'])) {
+	$url = "https://helpdesk.bitrix24.com";
+	$p = 0;
+	foreach ($_GET as $key=>$value){
+		if($p == 0) {
+			$url .=  "/?".$key."=".urldecode($value);
+		}else {
+			$url .= "&".$key."=".urldecode($value);
+		}
+		$p++;
+	}
+} 
 $arrContextOptions=array(
     "ssl"=>array(
         "verify_peer"=>false,
