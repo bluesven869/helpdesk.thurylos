@@ -30,10 +30,10 @@ foreach($javascript_list as $key=>$script) {
 	}
 	
 }
-$html->find('div[class=b24w-header-logo-item-text-word]', 0)->innertext = 'Thurly';
-$html->find('div[class=b24w-header-logo-item-text-number]', 0)->innertext = 'OS';
-
-
+if($html->find('div[class=b24w-header-logo-item-text-word]', 0))
+	$html->find('div[class=b24w-header-logo-item-text-word]', 0)->innertext = 'Thurly';
+if($html->find('div[class=b24w-header-logo-item-text-number]', 0))
+	$html->find('div[class=b24w-header-logo-item-text-number]', 0)->innertext = 'OS';
 $menu_link = $html->find('a[class=b24w-content-menu-section-link]');
 foreach($menu_link as $key=>$link) {
 	$menu_link[$key]->attr["data-internal-url"] = "?url=".$menu_link[$key]->attr["data-internal-url"];
