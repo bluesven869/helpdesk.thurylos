@@ -1,5 +1,6 @@
 <?php
 if(!empty($_GET['url'])) {
+	var_dump($_GET['url']);
 	$url = "https://helpdesk.bitrix24.com";
 	$p = 0;
 	foreach ($_GET as $key=>$value){
@@ -11,5 +12,5 @@ if(!empty($_GET['url'])) {
 		$p++;
 	}
 } 
-header('Location: http://helpdesk.thurlyos.com/?url='.$url);
+//header('Location: http://helpdesk.thurlyos.com/?url='.$url);
 ?>
