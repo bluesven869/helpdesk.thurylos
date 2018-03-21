@@ -24,6 +24,7 @@ $arrContextOptions=array(
     ),
 ); 
 $new_url = str_replace("?url=/widget2/", "", $new_url);
+$new_url = str_replace("?url=/", "", $new_url);
 var_dump($new_url);
 $content = file_get_contents($new_url, false, stream_context_create($arrContextOptions));
 $content = str_replace("/bitrix/tools/conversion/ajax_counter.php", "https://helpdesk.bitrix24.com/bitrix/tools/conversion/ajax_counter.php", $content);
