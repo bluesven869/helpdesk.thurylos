@@ -3,12 +3,16 @@ include("../simple_html_dom.php");
 if(!empty($_GET['url'])) {
 	
 	$url = $_GET['url'];
-	$new_url = "https://helpdesk.bitrix24.com/widget2";
+	$new_url = "https://helpdesk.bitrix24.com/";
 	
 	$p = 0;
 	foreach ($_GET as $key=>$value){
 		if($p == 0) {
-			$new_url .=  "/?".$key."=".urldecode($value);
+			if($key == "url") {
+				$new_url .= $value;
+			} else {
+				$new_url .=  "/?".$key."=".urldecode($value);
+			}
 		}else {
 			$new_url .= "&".$key."=".urldecode($value);
 		}
@@ -23,8 +27,7 @@ $arrContextOptions=array(
         "verify_peer_name"=>false,
     ),
 ); 
-$new_url = str_replace("?url=/widget2/", "", $new_url);
-$new_url = str_replace("?url=/", "", $new_url);
+
 var_dump($new_url);
 $content = file_get_contents($new_url, false, stream_context_create($arrContextOptions));
 $content = str_replace("/bitrix/tools/conversion/ajax_counter.php", "https://helpdesk.bitrix24.com/bitrix/tools/conversion/ajax_counter.php", $content);
