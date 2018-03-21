@@ -10,7 +10,7 @@ if(!empty($_GET['url'])) {
 		if($p == 0) {
 			if($key == "url") {
 				if(substr($value, 0, strlen("http")) == "http" )
-					$new_url .= "/widgets2/?url=". $value;
+					$new_url .= "/widgets2/?url=". urlencode($value);
 				else
 					$new_url .= $value;
 			} else {
