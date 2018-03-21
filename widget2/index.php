@@ -4,7 +4,7 @@ if(!empty($_GET['url'])) {
 	
 	$url = $_GET['url'];
 	
-	$new_url = "https://bitrix24.com/widget2";
+	$new_url = "https://helpdesk.bitrix24.com/widget2";
 	$p = 0;
 	foreach ($_GET as $key=>$value){
 		if($p == 0) {
