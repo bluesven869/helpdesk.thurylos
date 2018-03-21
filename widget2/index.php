@@ -27,7 +27,7 @@ $content = file_get_contents($new_url, false, stream_context_create($arrContextO
 $content = str_replace("/bitrix/tools/conversion/ajax_counter.php", "https://helpdesk.bitrix24.com/bitrix/tools/conversion/ajax_counter.php", $content);
 $content = str_replace("Bitrix24", "ThurlyOS", $content);
 $html = str_get_html($content);
-$css_list = $html->find('link');
+/*$css_list = $html->find('link');
 foreach($css_list as $key=>$css) {
 	$css_list[$key]->attr["href"] = "https://helpdesk.bitrix24.com/" .$css_list[$key]->attr["href"];
 }
@@ -55,6 +55,6 @@ $my_link = $html->find('a[class=b24w-content-inner-block-list-item-detail-link]'
 foreach($my_link as $key=>$link) {
 	$my_link[$key]->attr["data-internal-url"] = "?url=".$my_link[$key]->attr["data-internal-url"];
 	$my_link[$key]->attr["href"] = "?url=".$my_link[$key]->attr["href"];
-}
+}*/
 echo $html;
 ?>
