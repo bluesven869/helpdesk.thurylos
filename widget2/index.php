@@ -3,7 +3,7 @@ include("../simple_html_dom.php");
 if(!empty($_GET['url'])) {
 	
 	$url = $_GET['url'];
-	if(substr($url, 0, 5) === "/open/") {
+	if(substr($url, 0, 5) === "/open") {
 		$new_url = "https://helpdesk.bitrix24.com";
 			
 	} else {
