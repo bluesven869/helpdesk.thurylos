@@ -3,8 +3,13 @@ include("../simple_html_dom.php");
 if(!empty($_GET['url'])) {
 	
 	$url = $_GET['url'];
-	
-	$new_url = "https://helpdesk.bitrix24.com/widget2";
+	if(substr($url, 0, 5) === "/open/") {
+		$new_url = "https://helpdesk.bitrix24.com";
+			
+	} else {
+		$new_url = "https://helpdesk.bitrix24.com/widget2";
+		
+	}
 	$p = 0;
 	foreach ($_GET as $key=>$value){
 		if($p == 0) {
