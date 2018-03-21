@@ -3,7 +3,7 @@ include("../simple_html_dom.php");
 if(!empty($_GET['url'])) {
 	
 	$url = $_GET['url'];
-	$new_url = "https://helpdesk.bitrix24.com/";
+	$new_url = "https://helpdesk.bitrix24.com";
 	
 	$p = 0;
 	foreach ($_GET as $key=>$value){
