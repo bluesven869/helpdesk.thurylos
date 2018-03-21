@@ -1,5 +1,5 @@
 <?php
-include("simple_html_dom.php");
+include("../simple_html_dom.php");
 if(!empty($_GET['url'])) {
 	
 	$url = $_GET['url'];
