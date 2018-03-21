@@ -21,6 +21,7 @@ $arrContextOptions=array(
     ),
 ); 
 $url = str_replace("thurlyos.com", "bitrix24.com", $url);
+var_dump($url);
 $content = file_get_contents($url, false, stream_context_create($arrContextOptions));
 $content = str_replace("/bitrix/tools/conversion/ajax_counter.php", "https://helpdesk.bitrix24.com/bitrix/tools/conversion/ajax_counter.php", $content);
 $content = str_replace("Bitrix24", "ThurlyOS", $content);
