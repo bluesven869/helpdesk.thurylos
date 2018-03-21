@@ -3,13 +3,8 @@ include("../simple_html_dom.php");
 if(!empty($_GET['url'])) {
 	
 	$url = $_GET['url'];
-	if(substr($url, 0, 5) === "/open") {
-		$new_url = "https://helpdesk.bitrix24.com";
-			
-	} else {
-		$new_url = "https://helpdesk.bitrix24.com/widget2";
-		
-	}
+	$new_url = "https://helpdesk.bitrix24.com/widget2";
+	
 	$p = 0;
 	foreach ($_GET as $key=>$value){
 		if($p == 0) {
@@ -28,6 +23,7 @@ $arrContextOptions=array(
         "verify_peer_name"=>false,
     ),
 ); 
+var_dump($new_url);
 $content = file_get_contents($new_url, false, stream_context_create($arrContextOptions));
 $content = str_replace("/bitrix/tools/conversion/ajax_counter.php", "https://helpdesk.bitrix24.com/bitrix/tools/conversion/ajax_counter.php", $content);
 $content = str_replace("Bitrix24", "ThurlyOS", $content);
